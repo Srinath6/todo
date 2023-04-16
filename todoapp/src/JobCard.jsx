@@ -17,12 +17,17 @@ const card = (
       <Stack direction="row" alignItems="center" spacing={1}>
         <Typography sx={{ color: "white", width: "400px" }}>
           {" "}
-          some description about the task at hand, I don't know what to do with this data
+          some description about the task at hand
         </Typography>
         <IconButton>
           <AiOutlineCheck style={{ color: "#00A8CC" }}></AiOutlineCheck>
         </IconButton>
-        <Divider orientation="vertical" variant="middle" flexItem sx={{background: "#0C7B93"}}/>
+        <Divider
+          orientation="vertical"
+          variant="middle"
+          flexItem
+          sx={{ background: "#0C7B93" }}
+        />
         <IconButton>
           <AiFillDelete style={{ color: "#c70000" }}></AiFillDelete>
         </IconButton>

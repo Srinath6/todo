@@ -1,4 +1,4 @@
-import { Stack, Container, Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import Header from "./header";
 import OutlinedCard from "./JobCard";
 

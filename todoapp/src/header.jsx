@@ -46,14 +46,14 @@ export default function Header() {
         <Button
           variant="contained"
           size=""
-          sx={{ background: "#00A8CC", borderRadius: "10px" }}
+          sx={{ background: "#00A8CC", borderRadius: "10px", height: "58px" }}
         >
           {" "}
           Add
         </Button>
       </Stack>
       <Stack>
-        <Typography sx={{ paddingTop: "10px", color: "white" }}>
+        <Typography sx={{ paddingTop: "15px", color: "white" }}>
           Your tasks:
         </Typography>
       </Stack>
