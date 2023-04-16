@@ -8,35 +8,26 @@ import {
   Stack,
   Divider,
 } from "@mui/material/";
+import { useState } from "react";
 
 import { AiOutlineCheck, AiFillDelete } from "react-icons/ai";
+import AlertDialog from "./dismissCard";
+import DeleteAlertDialog from "./deleteConfirmation";
 
-const card = (
-  <React.Fragment>
-    <CardContent>
-      <Stack direction="row" alignItems="center" spacing={1}>
-        <Typography sx={{ color: "white", width: "400px" }}>
-          {" "}
-          some description about the task at hand
-        </Typography>
-        <IconButton>
-          <AiOutlineCheck style={{ color: "#00A8CC" }}></AiOutlineCheck>
-        </IconButton>
-        <Divider
-          orientation="vertical"
-          variant="middle"
-          flexItem
-          sx={{ background: "#0C7B93" }}
-        />
-        <IconButton>
-          <AiFillDelete style={{ color: "#c70000" }}></AiFillDelete>
-        </IconButton>
-      </Stack>
-    </CardContent>
-  </React.Fragment>
-);
+export const dialogStatus = React.createContext();
+export const deleteDialogStatus = React.createContext();
 
 export default function OutlinedCard() {
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const [deleteDialog, setDeleteDialog] = useState(false);
+  const deleteDialogOpen = () => {
+    setDeleteDialog(true);
+  }
+
   return (
     <Box sx={{ minWidth: 275 }}>
       <Card
@@ -47,7 +38,35 @@ export default function OutlinedCard() {
           marginTop: "10px",
         }}
       >
-        {card}
+        <CardContent>
+          <Stack direction="row" alignItems="center" spacing={1}>
+            <Typography sx={{ color: "white", width: "400px" }}>
+              {" "}
+              some description about the task at hand
+            </Typography>
+
+            
+            <IconButton onClick={handleClickOpen}>
+              <AiOutlineCheck style={{ color: "#00A8CC" }}></AiOutlineCheck>
+            </IconButton>
+            <dialogStatus.Provider value={{open, setOpen}}>
+            <AlertDialog/>
+            </dialogStatus.Provider>
+
+            <Divider
+              orientation="vertical"
+              variant="middle"
+              flexItem
+              sx={{ background: "#0C7B93" }}
+            />
+            <IconButton onClick={deleteDialogOpen}>
+              <AiFillDelete style={{ color: "#c70000" }}></AiFillDelete>
+            </IconButton>
+            <deleteDialogStatus.Provider value={{deleteDialog, setDeleteDialog}} >
+                <DeleteAlertDialog/>
+            </deleteDialogStatus.Provider>
+          </Stack>
+        </CardContent>
       </Card>
     </Box>
   );
