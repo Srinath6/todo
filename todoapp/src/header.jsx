@@ -18,6 +18,7 @@ export default function Header() {
       <Stack
         direction="row"
         justifyContent="space-between"
+        alignItems='center'
         sx={{ paddingTop: "20px" }}
       >
         <TextField
@@ -45,8 +46,8 @@ export default function Header() {
         />
         <Button
           variant="contained"
-          size=""
-          sx={{ background: "#00A8CC", borderRadius: "10px", height: "58px" }}
+          size="small"
+          sx={{ background: "#00A8CC", borderRadius: "10px", height: '36px'}}
         >
           {" "}
           Add
