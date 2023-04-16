@@ -1,5 +1,7 @@
 import { Stack, Container, Box } from "@mui/material";
 import Header from "./header";
+import OutlinedCard from "./JobCard";
+
 
 export default function App() {
   return (
@@ -14,6 +16,7 @@ export default function App() {
           }}
         >
           <Header />
+          <OutlinedCard/>
         </Box>
       </Container>
     </>
