@@ -8,20 +8,21 @@ import {
   Stack,
   Divider,
 } from "@mui/material/";
-import { useState } from "react";
+import { createContext, useState } from "react";
 
 import { AiOutlineCheck, AiFillDelete } from "react-icons/ai";
 import AlertDialog from "./dismissCard";
 import DeleteAlertDialog from "./deleteConfirmation";
 
-export const dialogStatus = React.createContext();
-export const deleteDialogStatus = React.createContext();
+export const dialogStatus = createContext();
+export const deleteDialogStatus = createContext();
 
-export default function OutlinedCard() {
+export default function OutlinedCard(props) {
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {
     setOpen(true);
   };
+
 
   const [deleteDialog, setDeleteDialog] = useState(false);
   const deleteDialogOpen = () => {
@@ -42,7 +43,7 @@ export default function OutlinedCard() {
           <Stack direction="row" alignItems="center" spacing={1}>
             <Typography sx={{ color: "white", width: "400px" }}>
               {" "}
-              some description about the task at hand
+              {props.cardInfo}
             </Typography>
 
             

@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@mui/material/";
 import { useContext } from "react";
-import { dialogStatus } from "./JobCard";
+import { dialogStatus } from "./OutlinedCard";
 
 export default function AlertDialog() {
   const handleClose = () => {
@@ -22,7 +22,7 @@ export default function AlertDialog() {
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
-        sx={{ '& .MuiPaper-root': { borderRadius: '10px' } }}
+        sx={{ "& .MuiPaper-root": { borderRadius: "10px" } }}
       >
         <DialogTitle
           id="alert-dialog-title"

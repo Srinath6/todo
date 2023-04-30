@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@mui/material/";
 import { useContext } from "react";
-import { deleteDialogStatus, dialogStatus } from "./JobCard";
+import { deleteDialogStatus, dialogStatus } from "./OutlinedCard";
 
 export default function DeleteAlertDialog() {
   const handleClose = () => {
@@ -35,8 +35,8 @@ export default function DeleteAlertDialog() {
             id="alert-dialog-description"
             sx={{ color: "white" }}
           >
-            Are you sure you want to delete this task? This action is
-            not reversible.
+            Are you sure you want to delete this task? This action is not
+            reversible.
           </DialogContentText>
         </DialogContent>
         <DialogActions sx={{ backgroundColor: "#142850" }}>

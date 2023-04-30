@@ -1,7 +1,11 @@
-import { Container, Box } from "@mui/material";
+import { Container, Box, List, ListItem, ListItemText } from "@mui/material";
 import Header from "./header";
-import OutlinedCard from "./JobCard";
+import OutlinedCard from "./OutlinedCard";
 
+export const cardsArray = [
+  "some information inside the card",
+  "info inside the second card",
+];
 
 export default function App() {
   return (
@@ -16,7 +20,9 @@ export default function App() {
           }}
         >
           <Header />
-          <OutlinedCard/>
+          {cardsArray.map(function (item) {
+            return <OutlinedCard cardInfo={item} />;
+          })}
         </Box>
       </Container>
     </>
